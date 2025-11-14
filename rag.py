@@ -116,7 +116,7 @@ def generate_rag_response(query: str, context: list[str]) -> str:
     
     system_instruction = (
         "You are an expert Q&A assistant. "
-        "Your goal is to answer the user's question only by referring to the provided context. "
+        "Your goal is to answer the user's question by referring to the provided context. "
         "If the answer cannot be found in the context, clearly state, 'The provided documents do not contain enough information to answer this question.' "
         "Do not use external knowledge."
     )
@@ -261,4 +261,5 @@ st.markdown("""
 }
 </style>
 """, unsafe_allow_html=True)
+
 st.caption("Architecture: PDF Upload -> Load/Extract Text -> Text Splitter -> (Simulated) Retrieval -> Gemini API Prompt -> Final Answer")
