@@ -164,7 +164,7 @@ def generate_rag_response(query: str, context: list[str]) -> str:
 # --- Streamlit UI ---
 
 st.set_page_config(
-    page_title="Gemini PDF RAG Application",
+    page_title="Z-BOT'S RAG Application",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -263,3 +263,4 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.caption("Architecture: PDF Upload -> Load/Extract Text -> Text Splitter -> (Simulated) Retrieval -> Gemini API Prompt -> Final Answer")
+
