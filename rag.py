@@ -169,7 +169,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-st.title("📄 Gemini PDF RAG Chatbot")
+st.title("📄 Z-BOT'S RAG Application")
 st.caption("Retrieval-Augmented Generation using uploaded PDF context and the Gemini API.")
 
 
@@ -263,4 +263,5 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.caption("Architecture: PDF Upload -> Load/Extract Text -> Text Splitter -> (Simulated) Retrieval -> Gemini API Prompt -> Final Answer")
+
 
