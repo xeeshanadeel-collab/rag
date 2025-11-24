@@ -16,7 +16,11 @@ except ImportError:
 
 
 # --- Configuration (using placeholders for API key and URL) ---
-API_KEY = "AIzaSyA0aVBVADHzgAN8-3hcf02VPh7sqnRa1FY" # Replace with your actual Gemini API Key
+try:
+    API_KEY = st.secrets["API_KEY"]
+except KeyError:
+    st.error("Gemini API key not found. Please set the 'API_KEY' secret.")
+    st.stop()
 MODEL_NAME = "gemini-2.5-flash-preview-09-2025"
 API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL_NAME}:generateContent?key={API_KEY}"
 MAX_CHUNK_SIZE = 1500  # Max characters per document chunk
@@ -263,5 +267,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.caption("Architecture: PDF Upload -> Load/Extract Text -> Text Splitter -> (Simulated) Retrieval -> Gemini API Prompt -> Final Answer")
+
 
 
